@@ -1,10 +1,3 @@
-/*
- * CSE41246 - Android Java Fundamentals
- * Fall 2019
- * Assignment #3
- * Szeto, Sheirman
- */
-
 package com.example.andriodjavaprog_assignment3;
 
 import android.content.Intent;
@@ -14,39 +7,41 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-
-    private Button buttonActivity2 = null;
+public class Activity2 extends AppCompatActivity {
+    private Button buttonHome = null;
     private Button buttonActivity3 = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_2);
 
 // Initialize widgets
-        this.buttonActivity2 = (Button)findViewById(R.id.buttonActivity2);
+        this.buttonHome = (Button)findViewById(R.id.buttonHome);
         this.buttonActivity3 = (Button)findViewById(R.id.buttonActivity3);
 
         // Create button callbacks
-        this.buttonActivity2.setOnClickListener(new View.OnClickListener() {
+        this.buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Testing Button Activity 2", "Activity 2 Fired");
-                Intent intent = new Intent(MainActivity.this,
-                        com.example.andriodjavaprog_assignment3.Activity2.class);
+                Log.d("Testing Button Home", "Home Fired");
+                Intent intent = new Intent(Activity2.this,
+                        com.example.andriodjavaprog_assignment3.MainActivity.class);
                 startActivity(intent);
-            }
+
+                }
         });
 
         this.buttonActivity3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Testing Btn Activity 3", "Activity 3 Fired");
-                Intent intent = new Intent(MainActivity.this,
+                Log.d("Testing Button Home", "Home Fired");
+                Intent intent = new Intent(Activity2.this,
                         com.example.andriodjavaprog_assignment3.Activity3.class);
                 startActivity(intent);
+
             }
         });
     }
 }
+
